@@ -1,65 +1,32 @@
-[
-    {
-        "key": "dbln",
-        "value": "%7B%22100083847274608%22%3A%22LD8CASrW%22%7D",
-        "domain": "facebook.com",
-        "path": "/login/device-based/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.445Z",
-        "lastAccessed": "2025-08-17T18:12:26.445Z"
-    },
-    {
-        "key": "datr",
-        "value": "JP-haDMZSnSYKw8uTMVOgO9x",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.445Z",
-        "lastAccessed": "2025-08-17T18:12:26.445Z"
-    },
-    {
-        "key": "sb",
-        "value": "JP-haDpNJ_kRPWu-P3Sv_4b3",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.445Z",
-        "lastAccessed": "2025-08-17T18:12:26.445Z"
-    },
-    {
-        "key": "m_pixel_ratio",
-        "value": "2",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.445Z",
-        "lastAccessed": "2025-08-17T18:12:26.447Z"
-    },
-    {
-        "key": "c_user",
-        "value": "100083847274608",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.447Z",
-        "lastAccessed": "2025-08-17T18:12:26.447Z"
-    },
-    {
-        "key": "xs",
-        "value": "29%3Ah-CCnzuQ_aB89w%3A2%3A1755447099%3A-1%3A-1",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.447Z",
-        "lastAccessed": "2025-08-17T18:12:26.447Z"
-    },
-    {
-        "key": "locale",
-        "value": "en_US",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-08-17T18:12:26.447Z",
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm start
+            "creation": "2025-08-17T18:12:26.447Z",
         "lastAccessed": "2025-08-17T18:12:26.447Z"
     },
     {
@@ -228,4 +195,5 @@
         "lastAccessed": "2025-08-17T18:12:26.447Z"
     }
 ]
+
 
